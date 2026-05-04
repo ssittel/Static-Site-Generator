@@ -43,7 +43,6 @@ def static_to_public(source, destination):
 
 
 def main():
-    basepath = ""
     if len(sys.argv) == 1:
         basepath = "/"
     else:
