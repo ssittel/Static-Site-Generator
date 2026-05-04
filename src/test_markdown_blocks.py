@@ -276,11 +276,11 @@ class TestBlocksToBlockType(unittest.TestCase):
 class TestMarkdowntoHTML(unittest.TestCase):
     def test_paragraphs(self):
         md = """
-This is *bolded* paragraph
+This is **bolded** paragraph
 text in a p
 tag here
 
-This is another paragraph with __italic__ text and `code` here
+This is another paragraph with _italic_ text and `code` here
 
 """
 
@@ -308,7 +308,7 @@ the *same* even with inline stuff
         
     def test_ul(self):
         md = """
-- This is *bold* text that should appear
+- This is **bold** text that should appear
 - in the format of
 - an unordered list
 """

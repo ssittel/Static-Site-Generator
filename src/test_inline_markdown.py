@@ -372,7 +372,7 @@ class TestSplitNodesLink(unittest.TestCase):
 
 class TestTexttoTextNode(unittest.TestCase):
     def test_mixed_string(self):
-        text = "This is some *bold* text and some __italic__ text and also some `code` as an example."
+        text = "This is some **bold** text and some _italic_ text and also some `code` as an example."
         actual = text_to_textnodes(text)
         self.assertListEqual(
             [
@@ -398,7 +398,7 @@ class TestTexttoTextNode(unittest.TestCase):
         )
 
     def test_link_and_image(self):
-        text = "Some *bold* text as well as an ![image](www.img.png) and a [link](www.link.com)"
+        text = "Some **bold** text as well as an ![image](www.img.png) and a [link](www.link.com)"
         actual = text_to_textnodes(text)
         self.assertListEqual(
             [
