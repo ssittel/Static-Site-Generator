@@ -3,7 +3,7 @@ from textnode import TextType
 from htmlnode import HTMLNode, LeafNode, ParentNode
 from inline_markdown import split_nodes_delimiter
 from markdown_blocks import text_to_children
-import os, shutil
+import os, shutil, sys
 from gencontents import generate_page, generate_page_recursive
 
 
@@ -43,14 +43,20 @@ def static_to_public(source, destination):
 
 
 def main():
-    static_to_public("static", "public")
+    basepath = ""
+    if len(sys.argv) == 1:
+        basepath = "/"
+    else:
+        basepath = sys.argv[1]
+
+    static_to_public("static", "docs")
     #generate_page("content/index.md", "template.html", "public/index.html")
     #generate_page("content/blog/glorfindel/index.md", "template.html", "public/blog/glorfindel/index.html")
     #generate_page("content/blog/tom/index.md", "template.html", "public/blog/tom/index.html")
     #generate_page("content/blog/majesty/index.md", "template.html", "public/blog/majesty/index.html")
     #generate_page("content/contact/index.md", "template.html", "public/contact/index.html")
 
-    generate_page_recursive("content", "template.html", "public")
+    generate_page_recursive("content", "template.html", "docs", basepath)
 
     
 
